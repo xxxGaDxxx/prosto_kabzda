@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
-import {Accordion} from './components/Accordion/Accordion.tssx';
+import {Accordion} from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
+import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledAccordion';
+import {UncontrolledRatint} from './components/UncontrolledRatint/UncontrolledAccordion';
 
 function App() {
     return (
-        <div>
+        <div className="App">
             <PageTitle title={'This is APP'}/>
-            <Rating value={3}/>
-            <Accordion titleValue={'Menu'} colLapsed={true}/>
+
+             <Accordion titleValue={'Menu'} colLapsed={true}/>
             <Accordion titleValue={'WOW'} colLapsed={false}/>
             <Rating value={0}/>
             <Rating value={1}/>
@@ -19,7 +22,11 @@ function App() {
             <Rating value={5}/>
             <OnOff on={true}/>
             <OnOff on={false}/>
-            <Rating value={5}/>
+            <h3>--- useState ---</h3>
+
+            <UncontrolledOnOff/>
+            <UncontrolledAccordion titleValue={'Menu'}/>
+            <UncontrolledRatint/>
         </div>
     );
 }
