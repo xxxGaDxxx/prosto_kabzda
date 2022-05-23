@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledAccordion';
-import {UncontrolledRatint} from './components/UncontrolledRatint/UncontrolledAccordion';
+import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import {UncontrolledRating} from './components/UncontrolledRatint/UncontrolledRating';
+import {ControlledRating, RatingType} from './components/ControlledRating/ControlledRating';
+import {ControlledAccordion} from './components/ControlledAccordion/ControlledAccordion';
+import {ControlledOnOff} from './components/ControlledOnOff/ControlledOnOff';
 
 function App() {
+    let [ratingValue, setRatingValue] = useState<RatingType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [switchOn, setSwitchOn] = useState<boolean>(false)
+
     return (
         <div className="App">
             <PageTitle title={'This is APP'}/>
 
-             <Accordion titleValue={'Menu'} colLapsed={true}/>
-            <Accordion titleValue={'WOW'} colLapsed={false}/>
+            <Accordion titleValue={'Menu'} colLapsed={false}/>
+            <Accordion titleValue={'WOW'} colLapsed={true}/>
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -26,7 +33,22 @@ function App() {
 
             <UncontrolledOnOff/>
             <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledRatint/>
+            <UncontrolledRating/>
+
+            <h2>---Controlled---</h2>
+            <ControlledRating
+                value={ratingValue}
+                onClick={setRatingValue}
+            />
+            <ControlledAccordion
+                titleValue={'Menu'}
+                colLapsed={accordionCollapsed}
+                onChange={()=>setAccordionCollapsed(!accordionCollapsed)}
+            />
+            <ControlledOnOff
+                on={switchOn}
+                onChange={setSwitchOn}
+            />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-export function UncontrolledRatint() {
+export function UncontrolledRating() {
 
     let [value, setValue] = useState(0)
 
