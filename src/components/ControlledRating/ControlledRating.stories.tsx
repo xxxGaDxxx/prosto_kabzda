@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
 
-import {ControlledRating, RatingType} from '../ControlledRating/ControlledRating';
+import {ControlledRating, RatingType} from './ControlledRating';
 
 
 export default {
-    title: 'ControlledRating stories',
+    title: 'Rating stories',
     component: ControlledRating,
 }
 export const EmptyRating = () => <ControlledRating value={0} onClick={x=>x}/>
