@@ -31,9 +31,9 @@ function App() {
             <OnOff on={false}/>
             <h3>--- useState ---</h3>
 
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>{switchOn.toString()}
             <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={setRatingValue}/>
 
             <h2>---Controlled---</h2>
             <ControlledRating
