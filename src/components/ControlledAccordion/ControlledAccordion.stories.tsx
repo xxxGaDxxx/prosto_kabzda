@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {action} from '@storybook/addon-actions';
 import {ControlledAccordion} from './ControlledAccordion';
+import {Accordion} from '../Accordion/Accordion';
 
 
 
@@ -8,7 +9,7 @@ import {ControlledAccordion} from './ControlledAccordion';
 
 export default {
     title: 'Accordion stories',
-    component: ControlledAccordion,
+    component:  Accordion,
 }
 
 const collBack = action('Accordion mode change event fired')
