@@ -7,13 +7,18 @@ import {UncontrolledAccordion} from './components/UncontrolledAccordion/Uncontro
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import {UncontrolledRating} from './components/UncontrolledRatint/UncontrolledRating';
 import {ControlledRating, RatingType} from './components/ControlledRating/ControlledRating';
-import {ControlledAccordion} from './components/ControlledAccordion/ControlledAccordion';
+import {ControlledAccordion, ItemsType} from './components/ControlledAccordion/ControlledAccordion';
 import {ControlledOnOff} from './components/ControlledOnOff/ControlledOnOff';
+
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
+    const items:ItemsType[] = [
+        {title: 'Wlad', value: 1},
+        {title: 'Margo', value: 2},
+        {title: 'Pascha', value: 3}]
 
     return (
         <div className="App">
@@ -44,6 +49,8 @@ function App() {
                 titleValue={'Menu'}
                 colLapsed={accordionCollapsed}
                 onChange={()=>setAccordionCollapsed(!accordionCollapsed)}
+                items={items}
+                onClick={()=>{}}
             />
             <ControlledOnOff
                 on={switchOn}
