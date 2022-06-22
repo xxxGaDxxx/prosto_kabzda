@@ -19,7 +19,8 @@ type AccordionTittlePropsType = {
     title: string
 }
 
-function AccordionTittle(props: AccordionTittlePropsType) {
+function AccordionTittleMemo(props: AccordionTittlePropsType) {
+    console.log(AccordionTittleMemo)
     return <h3>-- {props.title} --</h3>
 }
 
@@ -32,3 +33,5 @@ function AccordionBody() {
         </ul>
     )
 }
+
+const AccordionTittle=React.memo(AccordionTittleMemo)

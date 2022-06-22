@@ -87,10 +87,13 @@ type StarPropsType = {
     selected: boolean
 }
 
-function Star(props: StarPropsType) {
+function StarMemo(props: StarPropsType) {
+    console.log(StarMemo)
     return (
         <span>
             {props.selected ? <b>star </b> : 'star'}
         </span>
     )
 }
+
+const Star=React.memo(StarMemo)

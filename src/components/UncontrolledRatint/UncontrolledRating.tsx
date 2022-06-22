@@ -28,7 +28,8 @@ type StarPropsType = {
     setValue: () => void
 }
 
-function Star(props: StarPropsType) {
+function StarMemo(props: StarPropsType) {
+    console.log(StarMemo)
     return (
         <span onClick={() => {
             props.setValue()
@@ -37,3 +38,5 @@ function Star(props: StarPropsType) {
         </span>
     )
 }
+
+const Star=React.memo(StarMemo)
