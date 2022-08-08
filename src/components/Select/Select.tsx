@@ -79,7 +79,6 @@ export function Select(props: SelectProps) {
                                     }
 
                                 >{i.title}</div>)
-
                         }
 
                     </div>

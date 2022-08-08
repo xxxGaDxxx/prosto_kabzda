@@ -9,6 +9,7 @@ import {UncontrolledRating} from './components/UncontrolledRatint/UncontrolledRa
 import {ControlledRating, RatingType} from './components/ControlledRating/ControlledRating';
 import {ControlledAccordion, ItemsType} from './components/ControlledAccordion/ControlledAccordion';
 import {ControlledOnOff} from './components/ControlledOnOff/ControlledOnOff';
+import {Select} from './components/Select/Select';
 
 
 function App() {

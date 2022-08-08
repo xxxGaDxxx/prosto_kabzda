@@ -6,7 +6,7 @@ export default {
 
 
 export const SetTimeoutExample = () => {
-    console.log('SetTimeoutExample ')
+    console.log('SetTimeout Example ')
 
     const [counter, setCounter] = useState(1)
     const [fake, setFake] = useState(1)
@@ -29,7 +29,7 @@ export const SetTimeoutExample = () => {
 }
 
 export const SetIntervalExample = () => {
-    console.log('SetIntervalExample')
+    console.log('SetInterval Example')
 
     const [counter, setCounter] = useState(1)
     const [fake] = useState(1)
@@ -51,16 +51,17 @@ export const SetIntervalExample = () => {
 }
 
 export const DateExample = () => {
-    console.log('DataExample')
+    console.log('Data Example')
 
     let newDate =new Date().toLocaleTimeString()
 
-    const [date, steDate] = useState(newDate)
+    const [date, setDate] = useState(newDate)
     console.log('setInterval'+date)
 
     useEffect(()=>{
+        console.log('date',date)
         setInterval(()=>{
-            steDate(new Date().toLocaleTimeString())
+            setDate(new Date().toLocaleTimeString())
         },1000)
     },[])
 

@@ -12,8 +12,10 @@ export const DifficultCountingExample = () => {
 
     let resultA = 1
     let resultB = 1
+    console.log(111)
 
     resultA = useMemo(() => {
+        console.log('memo')
         let tempResultA = 1
         for (let i = 1; i <= a; i++) {
             let fake = 0
@@ -71,15 +73,55 @@ export const HelpsToReactMemoExample = () => {
     }, [users])
 
     const addUser = () => {
-        const newUsers = [...users, 'www' + new Date().getTime()]
+        const newUsers = [...users, 'wwwa' + new Date().getTime()]
         setUsers(newUsers)
     }
 
     return <>
-        <button onClick={() => {setCounter(counter + 1)}}>+</button>
-        <button onClick={()=>addUser()}>add user</button>
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
+        <button onClick={() => addUser()}>add user</button>
         {counter}
-        <Users users={users}/>
+        <Users users={newArray}/>
+    </>
+}
+
+
+const BooksSecret = (props: { books: Array<string>, addBook: () => void }) => {
+    console.log('BooksSecret')
+    return <div>
+        <button onClick={() => props.addBook()}>add user</button>
+        {
+            props.books.map((book, i) => <div key={i}>{book}</div>)
+        }
+    </div>
+}
+const Books = React.memo(BooksSecret)
+
+export const LikeUseCallback = () => {
+    console.log('LikeUseCallback')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['reactее', 'jsa', 'cssa', 'html'])
+
+    const newArray = useMemo(() => {
+        const newArray = books.filter(books => books.toLocaleLowerCase().indexOf('a') > -1)
+        return newArray
+    }, [books])
+
+    const addBook = useCallback(() => {
+        const newUsers = [...books, 'angular' + new Date().getTime()]
+        setBooks(newUsers)
+    },[books])
+
+    return <>
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
+        {counter}
+        <Books books={newArray} addBook={addBook}/>
     </>
 }
 
